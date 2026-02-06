@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>For My Bebo ❤️</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: 'Segoe UI', sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 65px;
+            color: white;
+            animation: glow 2s ease-in-out infinite alternate;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 28px;
+            color: white;
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #fff, 0 0 20px #ff4da6, 0 0 30px #ff4da6;
+            }
+            to {
+                text-shadow: 0 0 20px #fff, 0 0 40px #ff1a8c, 0 0 60px #ff1a8c;
+            }
+        }
+
+        .heart {
+            position: absolute;
+            color: white;
+            font-size: 20px;
+            animation: float 6s linear infinite;
+            opacity: 0.8;
+        }
+
+        @keyframes float {
+            from {
+                transform: translateY(100vh) scale(1);
+                opacity: 1;
+            }
+            to {
+                transform: translateY(-10vh) scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        iframe {
+            border-radius: 15px;
+            margin: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 15px 30px;
+            font-size: 20px;
+            border: none;
+            border-radius: 30px;
+            background: white;
+            color: #ff4da6;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+        }
+
+        #surprise {
+            display: none;
+            font-size: 38px;
+            color: white;
+            margin-top: 20px;
+            animation: glow 1.5s ease-in-out infinite alternate;
+        }
+    </style>
+</head>
+<body>
+
+<h1>I love you, Bebo ❤️🧿</h1>
+<h2>You are my favorite feeling.</h2>
+
+<!-- Only Song -->
+<iframe width="320" height="180"
+src="https://www.youtube.com/embed/SlK-0ha1bTw?autoplay=1&loop=1&playlist=SlK-0ha1bTw"
+allow="autoplay; encrypted-media"
+allowfullscreen>
+</iframe>
+
+<!-- Surprise button -->
+<button onclick="showMessage()">Tap for Surprise 💌</button>
+
+<div id="surprise">
+    Happy Valentine’s Day ❤️💖💘💕💞💓💗💝🌹😘🧿
+</div>
+
+<script>
+    function createHeart() {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML = "❤️";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = Math.random() * 20 + 15 + "px";
+        heart.style.animationDuration = Math.random() * 3 + 3 + "s";
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 6000);
+    }
+
+    setInterval(createHeart, 300);
+
+    function showMessage() {
+        document.getElementById("surprise").style.display = "block";
+    }
+</script>
+
+</body>
+</html>
